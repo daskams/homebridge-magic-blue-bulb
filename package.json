@@ -1,7 +1,7 @@
 {
   "name": "homebridge-magic-blue-bulb-mac",
   "version": "1.0.0",
-  "description": "Homebridge plugin for the MagicBlue LED Lightbulbs using services and characteristics so it's compatible with Mac.",
+  "description": "Homebridge plugin for the MagicBlue LED Lightbulbs (based on Lucavb's version) using services and characteristics so it's compatible with Mac.",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
@@ -14,7 +14,7 @@
   "keywords": [
     "homebridge-plugin"
   ],
-  "author": "Erik Terwan",
+  "author": "Erik Terwan <erik@erikterwan.com>",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/terwanerik/homebridge-magic-blue-bulb/issues"
