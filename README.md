@@ -1,36 +1,21 @@
 
 
-# Homebridge MagicBlue LED Light Bulb Plug in
+# Homebridge MagicBlue LED Light Bulb Plug in for Mac
 
-This plug-in enables you to control your MagicBlue LED light bulb.
+This plug-in enables you to control your MagicBlue LED light bulb, by running Homebridge on a Mac.
 
 ## Connecting and setting up
 
-The light bulb uses Bluetooth low energy. This means that your Raspberry Pi needs to have Bluetooth in some way. You will need to know the mac address of the light bulb. You can discover it by installing bluez and everything to your Raspberry Pi. A possible guide can be found [here](http://www.elinux.org/RPi_Bluetooth_LE). However you don't need to compile it yourself. I find the version in the repositories to be sufficient. You can then discover the mac address by running the command shown below. The mac is "FB:00:E0:82:AA:1F" in this case.
-
-```
-	pi@raspberrypi:/var/homebridge/own_plugins/homebridge-magic-blue-bulb$ sudo hcitool lescan
-	LE Scan ...
-	FF:FF:C8:5D:68:9E Eve
-	FF:FF:C8:5D:68:9E Eve Thermo
-	33:03:44:44:AA:5C (unknown)
-	33:03:44:44:AA:5C Eve Door
-	FB:00:E0:82:AA:1F (unknown)
-	22:20:7B:99:D3:AF (unknown)
-	FB:00:E0:82:AA:1F LEDBLE-A582661F    <--- this is your light bulb
-	22:20:7B:99:D3:AF (unknown)
-```
+The light bulb uses Bluetooth low energy. This means that your Mac needs to have Bluetooth 4.0. You have to find the name(s) of your bulb(s). It's something among the line of 'LEDBLE-xxxxx'. You can find them by opening the MagicBlue App on your phone.
 
 ## Installation
 
 Run the following command
 ```
-npm install -g homebridge-magic-blue-bulb
+npm install -g homebridge-magic-blue-bulb-mac
 ```
 
 Chances are you are going to need sudo with that.
-
-
 
 ## Config.json file
 
@@ -38,8 +23,7 @@ Chances are you are going to need sudo with that.
 	{
 	    "accessory" : "magic-blue-bulb",
 	    "name" : "MagicBlue",
-	    "mac" : "FB:00:E0:82:AA:1F",
-	    "handle" : 46
+	    "tag" : "LEDBLE-1234567"
 	}
 ```
 
@@ -47,8 +31,8 @@ Chances are you are going to need sudo with that.
 |---------------|------------------------------------------------------------------------------------|
 | accessory     | Required. Has to be "magic-blue-bulb"                                             |
 | name          | Required. The name of this accessory. This will appear in your Homekit app         |
-| mac           | Required. The mac address that you discovered earlier                              |
-| handle        | Optional. The handle that is used by the bulb for setting on/off and colors. This basically works like a key and you are writing the value. Use 46 for the newer(?) version of the bulbs. The standard value for the older(?) version is integrated into the code |
+| tag           | Required. The name of the device you discovered earlier                             |
+
 
 ## Issues
 
@@ -56,6 +40,4 @@ This software comes with no warranty. It works for me and it might for you.
 
 ## Credit
 
-I used the codes that were discovered by the author of this [post](https://bene.tweakblogs.net/blog/12447/connect-a-bluetooth-lightbulb-to-philips-hue). His findings were also used in his [repository](https://github.com/b0tting/magicbluehue). If the author reads this, I did not find your name on your blog. You can send me a message and I'll gladly add your name.
-
-And another thanks to Garry Tan for the conversion methods. See his post [here](http://axonflux.com/handy-rgb-to-hsl-and-rgb-to-hsv-color-model-c).
+I forked the [repository (homebridge-magic-blue-bulb)](https://github.com/lucavb/homebridge-magic-blue-bulb) from [Luca Becker](https://github.com/lucavb). A lot of the code is based directly from that repo, but rebuilding it to work on Mac took a lot of changes. Chances are it's going to work on a Raspberry Pi as well, but i'm not able to test that at the moment. Some of the codes for finding the correct services and characteristics came from the article by [Uri Shaked 'Reverse Engineering a Bluetooth Lightbulb'](https://medium.com/@urish/reverse-engineering-a-bluetooth-lightbulb-56580fcb7546)
