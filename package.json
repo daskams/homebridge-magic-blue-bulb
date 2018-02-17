@@ -1,6 +1,6 @@
 {
   "name": "homebridge-magic-blue-bulb-mac",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Homebridge plugin for the MagicBlue LED Lightbulbs (based on Lucavb's version) using services and characteristics so it's compatible with Mac.",
   "main": "index.js",
   "devDependencies": {},
