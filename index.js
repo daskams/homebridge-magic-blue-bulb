@@ -115,6 +115,7 @@ MagicBlueBulb.prototype.discoverServices = function(peripheral, callback) {
       }
 
       this.btService = foundServices[0]
+      this.log('service: ', this.btService)
 
       if (foundCharacteristics.length !== 1) {
         this.log('Did not found a characteristic')
@@ -123,6 +124,8 @@ MagicBlueBulb.prototype.discoverServices = function(peripheral, callback) {
       }
 
       this.btCharacteristic = foundCharacteristics[0]
+      this.log('characteristic: ', this.btCharacteristic)
+
       this.btPeripheral = peripheral
 
       if (typeof callback === 'function') {
