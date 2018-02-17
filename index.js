@@ -11,8 +11,8 @@ module.exports = function(homebridge) {
   HomebridgeAPI = homebridge
 
   homebridge.registerAccessory(
-    "homebridge-magic-blue-bulb",
-    "magic-blue-bulb",
+    "homebridge-magic-blue-bulb-mac",
+    "magic-blue-bulb-mac",
     MagicBlueBulb)
 }
 

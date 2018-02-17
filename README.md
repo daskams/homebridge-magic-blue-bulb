@@ -21,7 +21,7 @@ Chances are you are going to need sudo with that.
 
 ```json
 	{
-	    "accessory" : "magic-blue-bulb",
+	    "accessory" : "magic-blue-bulb-mac",
 	    "name" : "MagicBlue",
 	    "tag" : "LEDBLE-1234567"
 	}
@@ -30,7 +30,7 @@ Chances are you are going to need sudo with that.
 | Key           | Description                                                                        |
 |---------------|------------------------------------------------------------------------------------|
 | accessory     | Required. Has to be "magic-blue-bulb"                                             |
-| name          | Required. The name of this accessory. This will appear in your Homekit app         |
+| name          | Required. The name of this accessory. This will appear in your HomeKit app         |
 | tag           | Required. The name of the device you discovered earlier                             |
 
 
